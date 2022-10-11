@@ -1,0 +1,4 @@
+usr/include/sidplay
+usr/lib/*/lib*.la
+usr/lib/*/lib*.a
+usr/lib/*/lib*.so

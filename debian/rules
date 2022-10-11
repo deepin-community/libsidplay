@@ -1,0 +1,75 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+## Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+## Uncomment this to see what should happen.
+#export DH_NO_ACT=1
+
+include /usr/share/dpkg/architecture.mk
+
+build: build-stamp
+build-stamp:
+	dh_testdir debian/rules src
+	dh_autoreconf
+# well, ./configure isn't interactive here and doesn't take long, so it's
+# carried out in order to assist building the package for people with other
+# architectures and compiler environments
+	dh_auto_configure
+
+# Make the library - since 1.36.36 it seems no longer necessary to build
+# shared and static libraries separately, because of libtool usage...
+# We should use egcs or g++>2.95 in order to prevent problems occuring
+# with '-O2 -fPIC' or '-g'.
+# Chopped down the CXXFLAGS, just use -D_REENTRANT as required by Policy
+# Old:
+#	$(MAKE) CXXFLAGS="-pipe -funroll-loops -O3 -g -Wall -D_REENTRANT" \
+#	        LDFLAGS="-lc"
+#	$(MAKE) CXXFLAGS="-O3 -g -Wall -D_REENTRANT" LDFLAGS="-lstdc++"
+	$(MAKE)
+	touch build-stamp
+
+build-arch: build
+build-indep: build
+
+clean:
+	dh_testroot
+	dh_testdir debian/rules src
+	rm -f build-stamp
+	-cp -a src/libcfg.h.in.org src/libcfg.h.in
+	rm -f src/libcfg.h.in.org
+	[ ! -f Makefile ] || $(MAKE) distclean
+	rm -f config.log
+	rm -f conftest*
+	dh_autoreconf_clean
+	dh_clean
+
+# Build architecture-independent files here.
+binary-indep: build
+# Nothing to do here.
+
+# Build architecture-dependent files here.
+binary-arch: build
+	dh_testroot
+	dh_testdir debian/rules src
+	dh_prep
+	dh_installdirs -A
+	$(MAKE) DESTDIR=$(CURDIR)/debian/tmp/ install
+	dh_install
+	dh_installdocs
+	dh_installchangelogs
+	dh_strip
+	dh_compress
+	dh_fixperms
+	dh_makeshlibs
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary: binary-indep binary-arch
+
+.PHONY: build clean binary-indep binary-arch binary
+
+# vim:tw=0

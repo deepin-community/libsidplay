@@ -1,0 +1,489 @@
+libsidplay (1.36.60-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Update debhelper level to 13 .
+  * Update Standards-Version to 4.5.1 .
+
+ -- Laszlo Boszormenyi (GCS) <gcs@debian.org>  Thu, 31 Dec 2020 15:46:18 +0100
+
+libsidplay (1.36.59-11) unstable; urgency=medium
+
+  * Update debhelper level to 11:
+    - remove dh-autoreconf build dependency.
+  * Update Standards-Version to 4.1.3:
+    - change package priority to optional.
+
+  [ Gunnar Hjalmarsson <gunnarhj@ubuntu.com> ]
+  * Build with "Multi-Arch: same" (closes: #891689, LP: #1621861).
+
+ -- Laszlo Boszormenyi (GCS) <gcs@debian.org>  Mon, 05 Mar 2018 22:33:47 +0000
+
+libsidplay (1.36.59-10) unstable; urgency=low
+
+  [ Helmut Grohne <helmut@subdivi.de> ]
+  * Fix FTCBFS (closes: #836856):
+    + Let dh_auto_configure figure out the right flags
+    + Drop application of unavailable libsidplay-ix86-optimize.patch
+
+ -- Laszlo Boszormenyi (GCS) <gcs@debian.org>  Tue, 06 Sep 2016 17:00:07 +0000
+
+libsidplay (1.36.59-9) unstable; urgency=low
+
+  * Fix FTBFS with GCC 6 (closes: #811762).
+  * Update Standards-Version to 3.9.8 .
+
+ -- Laszlo Boszormenyi (GCS) <gcs@debian.org>  Fri, 15 Jul 2016 22:31:32 +0000
+
+libsidplay (1.36.59-8) unstable; urgency=low
+
+  [ Jonathan Wiltshire <jmw@debian.org> ]
+  * Rename library packages for g++5 ABI transition, patch
+    from Ubuntu (see #791168).
+
+  [ Francois Gouget <fgouget@free.fr> ]
+  * Multi-arch the package (closes: #777224).
+
+  * Update packaging.
+  * Update Standards-Version to 3.9.6 .
+
+ -- Laszlo Boszormenyi (GCS) <gcs@debian.org>  Sat, 08 Aug 2015 17:27:44 +0200
+
+libsidplay (1.36.59-7) unstable; urgency=low
+
+  * Do not suggest already removed xsidplay package (closes: #777077).
+
+ -- Laszlo Boszormenyi (GCS) <gcs@debian.org>  Sat, 07 Feb 2015 14:08:25 +0000
+
+libsidplay (1.36.59-6) unstable; urgency=low
+
+  * Move to debhelper level 9 and Standards-Version 3.9.5 .
+  * Use 3.0 (quilt) source format.
+  * Change package priority to match override.
+
+  [ Chen Baozi <baozich@gmail.com> ]
+  * Use dh-autoreconf in build to support new architectures
+    (closes: #529462, #749885).
+
+ -- Laszlo Boszormenyi (GCS) <gcs@debian.org>  Wed, 25 Jun 2014 16:03:50 +0000
+
+libsidplay (1.36.59-5) unstable; urgency=low
+
+  * Fix SID_CHECK_IOS_BIN in acinclude.m4 and configure (closes: #454870).
+  * Fix minor packaging issues and update to Standards-Version 3.7.3 .
+
+ -- Laszlo Boszormenyi (GCS) <gcs@debian.hu>  Thu, 17 Jan 2008 20:55:18 +0200
+
+libsidplay (1.36.59-4) unstable; urgency=low
+
+  * Fix override disparity (closes: #325191).
+
+ -- Laszlo Boszormenyi (GCS) <gcs@debian.hu>  Fri, 30 Sep 2005 17:51:21 +0200
+
+libsidplay (1.36.59-3) unstable; urgency=low
+
+  * Drop c102 suffix from the package names due to C++ ABI transition.
+
+ -- Laszlo Boszormenyi (GCS) <gcs@debian.hu>  Sun, 17 Jul 2005 06:57:44 +0200
+
+libsidplay (1.36.59-2) unstable; urgency=low
+
+  * Remove bogus AM_MAINTAINER_MODE from configure.in ; fails if only
+    autoconf is installed.
+
+ -- Laszlo Boszormenyi (GCS) <gcs@debian.hu>  Thu,  2 Dec 2004 16:02:07 +0100
+
+libsidplay (1.36.59-1) unstable; urgency=low
+
+  * New upstream release.
+  * Changed email address.
+
+ -- Laszlo Boszormenyi (GCS) <gcs@debian.hu>  Thu, 25 Nov 2004 20:04:30 +0100
+
+libsidplay (1.36.58-1) unstable; urgency=medium
+
+  * Fix FTBFS with gcc 3.4, thanks to Andreas Jochens <aj@andaco.de>;
+    so urgency set to medium (closes: #259444).
+  * Bump up Standards-Version to 3.6.1, no changes needed.
+  * Versioned debhelper dependency and clean up rules a bit.
+  * New upstream release.
+  * New maintainer; document maintainer changes in copyright.
+
+ -- László Böszörményi (GCS) <gcs@lsc.hu>  Sat, 14 Aug 2004 13:42:14 +0000
+
+libsidplay (1.36.57-3) unstable; urgency=low
+
+  * debian/control: Use Suggests instead of Recommends to point to
+    sidplay-base.  (Closes: #183677)
+
+ -- Ivo Timmermans <ivo@debian.org>  Tue, 11 Mar 2003 17:07:43 +0100
+
+libsidplay (1.36.57-2) unstable; urgency=low
+
+  * Rename libsidplay1 to libsidplay1-c102 for the C++-transition.
+
+ -- Ivo Timmermans <ivo@debian.org>  Thu,  9 Jan 2003 12:38:08 +0100
+
+libsidplay (1.36.57-1) unstable; urgency=low
+
+  * New upstream release
+  * debian/control:
+      - Change Priority to optional.
+      - Update Standards-Version.
+  * Applied patch to fix signed/unsigned char differences.  (Closes: #159966)
+
+ -- Ivo Timmermans <ivo@debian.org>  Tue, 12 Nov 2002 00:01:52 +0100
+
+libsidplay (1.36.56-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/libsidplay1-dev.shlibs: Renamed to libsidplay1.shlibs.
+    (Closes: #159918)
+
+ -- Ivo Timmermans <ivo@debian.org>  Sat,  7 Sep 2002 13:39:27 +0200
+
+libsidplay (1.36.55-2) unstable; urgency=low
+
+  * configure.in: Add AM_MAINTAINER_MODE. (Closes: #156845)
+
+ -- Ivo Timmermans <ivo@debian.org>  Thu, 15 Aug 2002 23:50:15 +0200
+
+libsidplay (1.36.55-1) unstable; urgency=low
+
+  * New upstream release.
+  * NMU ack (Closes: #104896)
+  * src/sidtune.cpp: Don't open files with ios::ate, which would _create_
+    the file.  Obviously unwanted behavior, and a seek is called afterward
+    anyway. (Closes: #156375)
+  * debian/*: Cleaned up, use newer debhelper infrastructure.
+  * scripts/config.{guess,sub}: Updated.
+  * scripts/ltmain.sh: Ran libtoolize --force --copy
+  * aclocal.m4: Ran aclocal.
+  * configure: Ran autoconf.
+
+ -- Ivo Timmermans <ivo@debian.org>  Thu, 15 Aug 2002 22:28:09 +0200
+
+libsidplay (1.36.47-2.2) unstable; urgency=low
+
+  * NMU
+  * Oops, this needs to build on other archs too... use ios::openmode
+    instead of ios_base::openmode, as I should have done the 
+    first time.
+
+ -- Randolph Chung <tausq@debian.org>  Wed,  6 Feb 2002 23:45:10 -0800
+
+libsidplay (1.36.47-2.1) unstable; urgency=low
+
+  * NMU
+  * libtoolize --force to update libtool and autoconf setup
+  * g++3/libstdc++3 fixes (Closes: #104896)
+
+ -- Randolph Chung <tausq@debian.org>  Sun,  3 Feb 2002 23:34:31 -0800
+
+libsidplay (1.36.47-2) unstable; urgency=low
+
+  * New maintainer.
+  * Updated standards version to mach current policy.
+
+ -- Ivo Timmermans <ivo@debian.org>  Wed, 29 Aug 2001 21:53:58 +0200
+
+libsidplay (1.36.47-1) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Ulf Jaenicke-Roessler <ujr@debian.org>  Tue, 13 Feb 2001 20:47:12 +0100
+
+libsidplay (1.36.46-1) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Ulf Jaenicke-Roessler <ujr@debian.org>  Sat,  2 Dec 2000 21:30:58 +0100
+
+libsidplay (1.36.45-2) unstable; urgency=low
+
+  * Rebuilt for newer libstdc++ in order to prevent
+    problems with xsidplay.
+
+ -- Ulf Jaenicke-Roessler <ujr@debian.org>  Mon, 16 Oct 2000 12:23:43 +0200
+
+libsidplay (1.36.45-1) unstable; urgency=low
+
+  * New upstream version. Should be the last of a series of stability
+    fixes. More work will be done on sidplay2.
+
+ -- Ulf Jaenicke-Roessler <ujr@debian.org>  Sat, 26 Aug 2000 19:15:48 +0200
+
+libsidplay (1.36.40-1) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Ulf Jaenicke-Roessler <ujr@debian.org>  Thu,  6 Jul 2000 21:09:52 +0200
+
+libsidplay (1.36.39-1) unstable; urgency=low
+
+  * New upstream version.
+  * Added Build-Depends: debhelper (Closes: #65872).
+  * Removed Build-Depends: libtool, all necessary files are in the package.
+
+ -- Ulf Jaenicke-Roessler <ujr@debian.org>  Sun, 25 Jun 2000 12:12:34 +0200
+
+libsidplay (1.36.38-1) unstable; urgency=low
+
+  * New upstream version.
+  * Apply an Intel specific patch during package building, only if
+    building on Intel, of course.
+
+ -- Ulf Jaenicke-Roessler <ujr@debian.org>  Sun, 28 May 2000 22:10:54 +0200
+
+libsidplay (1.36.36-1) unstable; urgency=low
+
+  * Upstream author had split the old package into libsidplay and
+    sidplay-base (the latter with a lower version number - no need
+    for an epoch, though, because of the name change).
+  * Upstream build procedure uses libtool now.
+  * Soname changed by upstream author to 1 (instead of 1.36), so
+    I had to change the package name...
+  * Policy conformance to 3.1.1.1 checked and number raised in
+    debian/control. Had to add Build-Depends for libtool.
+  * Left out some old docs, which should be outdated as they mainly
+    contained information regarding patches for older versions.
+
+ -- Ulf Jaenicke-Roessler <ujr@debian.org>  Fri, 12 May 2000 16:45:47 +0200
+
+sidplay (1.36.35-2) unstable; urgency=low
+
+  * Adapted to policy 3.0.1 (which essentially needed the FHS compliant
+    move from /usr/doc to /usr/share/doc). Standard version changed.
+  * Link to GPL adjusted for new position.
+
+ -- Ulf Jaenicke-Roessler <ujr@debian.org>  Tue, 12 Oct 1999 23:15:23 +0200
+
+sidplay (1.36.35-1) unstable; urgency=low
+
+  * New upstream version.
+  * HVSC homepage URL in package description updated.
+  * Shortened rules file by removing several outdated comments.
+  * Standards version changed from 2.5.0.0 to 2.5.0.
+
+ -- Ulf Jaenicke-Roessler <ujr@debian.org>  Sat, 19 Jun 1999 12:38:38 +0200
+
+sidplay (1.36.34-oss-1) unstable; urgency=low
+
+  * Upstream patch adds new OSS driver interface. Now 16-bit samples
+    work fine on SPARC/Linux with little-endian sound hardware.
+  * Include all doc files in debian/docs, not debian/rules.
+
+ -- Ulf Jaenicke-Roessler <ujr@debian.org>  Sat, 17 Apr 1999 17:52:28 +0200
+
+sidplay (1.36.34-4) unstable; urgency=low
+
+  * Do not create 'package'/DEBIAN directory - let debhelper do it.
+
+ -- Ulf Jaenicke-Roessler <ujr@debian.org>  Fri,  2 Apr 1999 19:30:02 +0200
+
+sidplay (1.36.34-3) unstable; urgency=low
+
+  * Fixed libsidplay1.36 dependencies to prevent usage of
+    shared libraries compiled against glibc 2.0 which will
+    not work in glibc 2.1 environment.
+  * Removed bashisms in rules file - should build fine with
+    /bin/sh linked to /bin/ash.
+
+ -- Ulf Jaenicke-Roessler <ujr@debian.org>  Fri,  2 Apr 1999 18:58:10 +0200
+
+sidplay (1.36.34-2) unstable; urgency=low
+
+  * Recompiled for glibc 2.1.
+
+ -- Ulf Jaenicke-Roessler <ujr@debian.org>  Mon, 29 Mar 1999 09:40:17 +0200
+
+sidplay (1.36.34-1) unstable; urgency=low
+
+  * New upstream patches.
+  * Reversing an essentially i386 specific patch, which may cause
+    problems on other architectures. ToDo: apply patch architecture
+    dependent.
+
+ -- Ulf Jaenicke-Roessler <ujr@debian.org>  Mon, 15 Mar 1999 21:03:41 +0100
+
+sidplay (1.36.33-990220-2) unstable; urgency=low
+
+  * Updated documentation from upstream sources.
+  * Reversed a small patch in order to avoid the bus error on sparc
+    systems.
+  * Tweaked description a little bit: there are now more than 10.000
+    files in the High Voltage SID Collection (3.0)!
+  * HVSC homepage URL updated.
+
+ -- Ulf Jaenicke-Roessler <ujr@debian.org>  Tue,  9 Mar 1999 23:18:35 +0100
+
+sidplay (1.36.33-990220-1) unstable; urgency=low
+
+  * Upstream patches applied for new version.
+  * Read /usr/doc/libsidplay1.36/1.36.33.txt for information
+    about this particular release.
+  * Changes in the demo player (better ^C handling for current kernels,
+    added '--help').
+  * doc-base registration now handled by dh_installdocs - at least
+    debhelper 1.2.26 needed (doc-base was broken before).
+
+ -- Ulf Jaenicke-Roessler <ujr@debian.org>  Sat, 20 Feb 1999 20:37:54 +0100
+
+sidplay (1.36.31-2) unstable; urgency=low
+
+  * Recompiled with fixed libc.
+  * Registers with doc-base (removed menu file for dwww).
+
+ -- Ulf Jaenicke-Roessler <ujr@debian.org>  Sat, 19 Dec 1998 14:48:24 +0100
+
+sidplay (1.36.31-1) unstable; urgency=low
+
+  * Upstream patches applied for new version.
+  * Policy conformance checked and 'Standards-Version' updated to 2.5.0.0 -
+    hopefully I didn't miss something.
+
+ -- Ulf Jaenicke-Roessler <ujr@debian.org>  Sat,  5 Dec 1998 20:58:57 +0100
+
+sidplay (1.36.29-1) unstable; urgency=low
+
+  * New version.
+  * Major, important ;-) changes to 'Readme.Debian' and 'copyright'.
+
+ -- Ulf Jaenicke-Roessler <ujr@debian.org>  Wed, 18 Nov 1998 19:15:38 +0100
+
+sidplay (1.36.28-2) unstable; urgency=low
+
+  * Added target 'distclean' to Makefile.in, use it in
+    'debian/rules clean' (Fixes:#27596).
+
+ -- Ulf Jaenicke-Roessler <ujr@debian.org>  Wed, 14 Oct 1998 22:32:06 +0200
+
+sidplay (1.36.28-1) unstable; urgency=low
+
+  * New version.
+
+ -- Ulf Jaenicke-Roessler <ujr@debian.org>  Mon,  5 Oct 1998 21:42:41 +0200
+
+sidplay (1.36.26-1) unstable; urgency=low
+
+  *  New version.
+
+ -- Ulf Jaenicke-Roessler <ujr@debian.org>  Wed, 30 Sep 1998 20:23:07 +0200
+
+sidplay (1.36.25-2) unstable; urgency=low
+
+  * Compiled and linked with libstdc++2.9.
+
+ -- Ulf Jaenicke-Roessler <ujr@debian.org>  Mon, 14 Sep 1998 23:48:29 +0200
+
+sidplay (1.36.25-1) unstable; urgency=low
+
+  * New upstream version.
+  * Calls ./configure in debian/rules, because it doesn't take long to
+    execute and it may help building the package for other architectures
+    and other compiler environments (eg. gcc instead of egcc) (Fixes:#23931).
+
+ -- Ulf Jaenicke-Roessler <ujr@debian.org>  Sun,  2 Aug 1998 12:58:16 +0200
+
+sidplay (1.36.24-1) unstable; urgency=low
+
+  * New upstream version (small bugfix).
+
+ -- Ulf Jaenicke-Roessler <ujr@debian.org>  Thu,  4 Jun 1998 21:56:36 +0200
+
+sidplay (1.36.23-1) unstable; urgency=low
+
+  * New upstream version.
+  * Reworked debian/rules to make use of autoconf support.
+
+ -- Ulf Jaenicke-Roessler <ujr@debian.org>  Mon,  1 Jun 1998 13:16:14 +0200
+
+sidplay (1.36.18-1) unstable; urgency=low
+
+  * New upstream version.
+  * Moved menu entry for dwww based offline documentation from xsidplay to
+    libsidplay, because this package actually contains the documentation.
+  * Changed major version of the library from 1 to 1.36 in order to
+    synchronize with the upstream sources again.
+
+ -- Ulf Jaenicke-Roessler <ujr@debian.org>  Mon, 27 Apr 1998 22:29:59 +0200
+
+sidplay (1.36.15-2) frozen unstable; urgency=low
+
+  * Incorporated diff's by Christian Meder <meder@isr.uni-stuttgart.de>
+    from his alpha only release (replaced dependence on libg++-dev by
+    dependence on libstdc++-dev; removed 'CC=egcc' from debian/rules).
+
+ -- Ulf Jaenicke-Roessler <ujr@debian.org>  Mon, 20 Apr 1998 18:11:37 +0200
+
+sidplay (1.36.15-1.1) frozen unstable; urgency=low
+
+  * Non maintainer alpha only release
+  * now depends on libstdc++-dev requested by 
+    Ray jdassen@wi.leidenuniv.nl
+  * removed CC=egcc from debian/rules as g++ is now from the 
+    egcs suite
+  * patch forwarded to bug system
+
+ -- Christian Meder <meder@isr.uni-stuttgart.de>  Wed, 15 Apr 1998 13:02:01 +0200
+
+sidplay (1.36.15-1) frozen unstable; urgency=low
+
+  * New upstream version (pristine 1.36.13, with patches).
+  * Compiled with egcs (pre 1.0.2), which solved several problems that
+    gcc had (-O2 and -g, -fPIC and certain tunes).
+  * Explicitly linked with -lc.
+  * The package called ldconfig in postrm only if not upgrading,
+    but I removed this anyway to satisfy lintian.
+  * Includes now the documentation from the SidPlay homepage for
+    offline reading.
+
+ -- Ulf Jaenicke-Roessler <ujr@debian.org>  Mon, 30 Mar 1998 20:27:22 +0200
+
+sidplay (1.36.11-1) unstable; urgency=low
+
+  * New upstream version.
+  * Don't use control file "du" anymore.
+  * Made /usr/doc/sidplay a symlink to /usr/doc/libsidplay1 (Fixes:#18648).
+  * Rewrote the detailed descriptions in debian/control in order to reflect
+    the changed "main" package.
+  * Lintian (0.2.4) approved.
+
+ -- Ulf Jaenicke-Roessler <ujr@debian.org>  Sat,  7 Mar 1998 23:30:00 +0100
+
+sidplay (1.36.10-2) unstable; urgency=low
+
+  * Failing to play certain SID tunes was caused by '-O2' AND '-fPIC',
+    however using '-O1' together with '-fPIC' seems to work fine.
+
+ -- Ulf Jaenicke-Roessler <ujr@debian.org>  Sat, 31 Jan 1998 19:55:27 +0100
+
+sidplay (1.36.10-1) unstable; urgency=low
+
+  * New upstream version.
+  * debian/rules rewritten, use debhelper instead of several
+    'install's and 'cp's.
+  * Changed "main" package from sidplay (kind of sample application)
+    to libsidplay1, yielding simpler dh_* calls.
+  * "Downgraded" policy conformance to 2.3.0.0 :(, in order to match debhelper.
+  * Suggests xsidplay now.
+
+ -- Ulf Jaenicke-Roessler <ujr@debian.org>  Thu, 29 Jan 1998 21:22:29 +0100
+
+sidplay (1.36.9-1) unstable; urgency=low
+
+  * New upstream version.
+  * Added maintainer scripts (postinst, postrm), that merely call
+    ldconfig. This wouldn't be necessary according to the current
+    policy, but was recommended on the debian-mentors mailing list.
+  * Moved *.so link from the shared library package to the dev package.
+
+ -- Ulf Jaenicke-Roessler <ujr@debian.org>  Wed,  7 Jan 1998 22:29:28 +0100
+
+sidplay (1.36.3-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Ulf Jaenicke-Roessler <ujr@debian.org>  Sun,  7 Dec 1997 12:35:35 +0100
+
+
+

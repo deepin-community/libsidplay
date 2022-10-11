@@ -1,0 +1,14 @@
+ToDo list for Debian
+
+* apply patches architecture dependent (especially optimization patches),
+  eg. libsidplay-1.36.36-optimize.patch or libsidplay-ix86-optimize.patch
+  -> this was introduced in version 1.36.38 and needs to be tested
+* solving general packaging or compilation problems, if any
+  (there was once ;-) one not reproducable bug reported with package
+   building on PowerPC which I closed because the submitter did not
+   reply to a couple of pleas for more details)
+
+
+Ulf Jaenicke-Roessler <ujr@debian.org>, Tue, 13 Feb 2001 21:01:36 +0100
+
+ vim:tw=79

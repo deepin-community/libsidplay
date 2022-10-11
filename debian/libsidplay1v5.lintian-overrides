@@ -1,0 +1,2 @@
+# G++5 ABI transition
+libsidplay1v5: package-name-doesnt-match-sonames libsidplay1

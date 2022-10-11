@@ -1,0 +1,36 @@
+Source: libsidplay
+Section: sound
+Priority: optional
+Maintainer: Laszlo Boszormenyi (GCS) <gcs@debian.org>
+Standards-Version: 4.5.1
+Build-Depends: debhelper-compat (= 13), patch
+
+Package: libsidplay1v5
+Section: libs
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Conflicts: libsidplay1.36, sidplay (<= 1.36.36), libsidplay1-c102 (<= 1.36.59-2), libsidplay1
+Replaces: libsidplay1.36, libsidplay1-c102 (<= 1.36.59-2), libsidplay1
+Suggests: sidplay-base
+Description: SID (MOS 6581) emulation library
+ This is a (shared) library that implements the emulation of the C64's
+ SID chip (MOS 6581) and CPU (6510). It is used by several "player"
+ applications, e.g. sidplay, which make it possible to listen to *really*
+ a lot (13.600+) of tunes, known from old and new C64 programs (as well
+ as Amiga compositions).
+ Find most of the available musics from your favourite games or demos
+ and more in the High Voltage SID Collection (HVSC). For downloads and
+ information about the volunteers, who maintain the collection, look at
+ the HVSC homepage http://www.hvsc.c64.org.
+
+Package: libsidplay1-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, libsidplay1v5 (= ${binary:Version})
+Conflicts: libsidplay1.36-dev
+Replaces: libsidplay1.36-dev
+Description: SID (MOS 6581) emulation library (development files)
+ Here are the header files and a static library that are necessary to compile
+ applications which use libsidplay.
